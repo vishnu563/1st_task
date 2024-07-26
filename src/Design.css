@@ -1,0 +1,91 @@
+body{
+    background-color: rgb(16, 20, 42);
+    padding: 5px 10px;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.leftside_container{
+    
+    top:0;
+    margin-top: 80px;
+    left:0;
+    margin-left: 30px;
+    position: fixed;
+    border: 2px solid white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 500px;
+    width: 100%;
+    padding-bottom: 10px;
+    
+}
+.email{
+    height: auto;
+    width: 280px;
+    display: flex;
+    justify-content: space-between;
+}
+h1,.validemails,.invalidemails{
+    color: aliceblue;
+}
+.vm{
+    text-decoration: underline cornsilk;
+}
+.rightside_container{
+    
+    font-size: 30px;
+    top: 0;
+    margin-top: 100px;
+    right: 0;
+    margin-right: 20px;
+    position:fixed;
+    justify-content: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 8px;
+    padding-right: 8px;
+    max-width: 420px;
+    width:100%;
+}
+form{
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.inputs{
+    padding: 4px 8px;
+    border: 2px solid gray;
+    border-radius: 10px ;
+    width: 400px;
+}
+button{
+    height: 30px;
+    color: aliceblue;
+    border-radius: 5px;
+    align-items: center;
+    border: none;
+    background-color: green;
+}
+h1{
+    font-size: 50px;
+    font-family: 'calibri', Times, serif;
+}
+.inputs:hover{
+    border: 2px solid yellow;
+}
+button:hover{
+    cursor: pointer;
+}
+.files:hover{
+    cursor: pointer;
+}
