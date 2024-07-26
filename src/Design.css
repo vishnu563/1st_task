@@ -1,5 +1,12 @@
 body{
-    background-color: rgb(16, 20, 42);
+    /* background:linear-gradient(
+        to right,
+        green 0%,
+        green 50%,
+        skyblue 50%,
+        skyblue 100%
+    ); */
+    background: linear-gradient(45deg,red,blue);
     padding: 5px 10px;
 }
 .container{
@@ -37,7 +44,6 @@ h1,.validemails,.invalidemails{
     text-decoration: underline cornsilk;
 }
 .rightside_container{
-    
     font-size: 30px;
     top: 0;
     margin-top: 100px;
@@ -69,12 +75,14 @@ form{
     width: 400px;
 }
 button{
+    text-transform: uppercase;
     height: 30px;
-    color: aliceblue;
+    color:black;
     border-radius: 5px;
     align-items: center;
     border: none;
-    background-color: green;
+    background-color: rgba(2, 167, 8, 0.829);
+    cursor: pointer;
 }
 h1{
     font-size: 50px;
@@ -83,9 +91,23 @@ h1{
 .inputs:hover{
     border: 2px solid yellow;
 }
-button:hover{
-    cursor: pointer;
+.files{
+    display: none;
 }
-.files:hover{
+.btnfile{
+    display: inline-block;
+    text-transform: uppercase;
+    color:black;
+    background: orange;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    user-select: none;
     cursor: pointer;
+    box-shadow: 5px 15px 25px rgba(0,0,0,0.25);
+    border-radius: 3px;
+    height: 20px;
+    width: 100px;
+    padding-top: 5px;
+    margin-left: 170px;
 }

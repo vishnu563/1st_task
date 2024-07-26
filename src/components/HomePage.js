@@ -36,7 +36,8 @@ function HomePage() {
                 <label htmlFor="body">Body</label>
                 <textarea className='inputs' id="body" name="body" placeholder="Enter body Text"></textarea>
                 <label>Upload .csv File</label>
-                <input className='files' type="file"></input>
+                <input className='files' type="file" id='btn'></input>
+                <label className='btnfile' htmlFor='btn'>Upload File</label>
             </form>
         </div>
         </div>
