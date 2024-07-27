@@ -1,13 +1,11 @@
 body{
-    /* background:linear-gradient(
-        to right,
-        green 0%,
-        green 50%,
-        skyblue 50%,
-        skyblue 100%
-    ); */
-    background: linear-gradient(45deg,red,blue);
-    padding: 5px 10px;
+    margin: 0;
+    padding: 0;
+    background-image: url(./siva.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
 }
 .container{
     display: flex;
@@ -15,33 +13,65 @@ body{
 }
 
 .leftside_container{
-    
     top:0;
     margin-top: 80px;
     left:0;
     margin-left: 30px;
     position: fixed;
-    border: 2px solid white;
+    border: 2px solid rgba(201, 179, 194, 0.721);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    max-width: 500px;
+    backdrop-filter: blur(3px);
+    max-width: 450px;
     width: 100%;
     padding-bottom: 10px;
+    height: 430px;
     
 }
 .email{
-    height: auto;
-    width: 280px;
+    border: 2px solid black;
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+}
+
+.validemails{
+    margin-top: 10px;
+    margin-left: 40px;
+    margin-right: 40px;
+    padding-bottom: 30px;
+
 }
 h1,.validemails,.invalidemails{
     color: aliceblue;
 }
 .vm{
-    text-decoration: underline cornsilk;
+    font-family: "Josefin Sans", sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+}
+.validscroll{
+    text-align: justify;
+    overflow: auto;
+    min-height: 230px;
+    max-height: 240px;
+    max-width: 360px;
+    margin-left: 2px;
+    margin-right: 2px;
+    border :2px solid rgba(201, 179, 194, 0.721);
+    border-radius: 5px;
+}
+::-webkit-scrollbar{
+    width: 16px;
+}
+::-webkit-scrollbar-track{
+    background:transparent;
+}
+::-webkit-scrollbar-thumb{
+    background-color: rgba(222, 235, 234, 0.824);
+    border: 1px solid white;
+    border-radius: 4px;
+    
 }
 .rightside_container{
     font-size: 30px;
@@ -54,7 +84,7 @@ h1,.validemails,.invalidemails{
     color: white;
     display: flex;
     flex-direction: column;
-    border: 2px solid white;
+    border: 2px solid rgba(201, 179, 194, 0.721);
     border-radius: 10px;
     padding-top: 30px;
     padding-bottom: 30px;
@@ -63,7 +93,9 @@ h1,.validemails,.invalidemails{
     max-width: 420px;
     width:100%;
 }
-form{
+.forms{
+    text-transform: uppercase;
+    font-family: "Noto Serif", serif;;
     gap: 10px;
     display: flex;
     flex-direction: column;
@@ -74,40 +106,110 @@ form{
     border-radius: 10px ;
     width: 400px;
 }
-button{
-    text-transform: uppercase;
-    height: 30px;
-    color:black;
-    border-radius: 5px;
-    align-items: center;
-    border: none;
-    background-color: rgba(2, 167, 8, 0.829);
-    cursor: pointer;
-}
-h1{
-    font-size: 50px;
-    font-family: 'calibri', Times, serif;
-}
 .inputs:hover{
     border: 2px solid yellow;
 }
 .files{
     display: none;
-}
-.btnfile{
+ } 
+ .sendcontainer{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+ }
+.sendbtn{
+    color: white;
     display: inline-block;
-    text-transform: uppercase;
-    color:black;
-    background: orange;
-    text-align: center;
-    font-size: 12px;
-    letter-spacing: 1.5px;
-    user-select: none;
+    background:rgb(50, 170, 245);
+    height: 25px;
     cursor: pointer;
-    box-shadow: 5px 15px 25px rgba(0,0,0,0.25);
+    justify-content: center;
+    width: 90px;
+    border: none;
     border-radius: 3px;
-    height: 20px;
-    width: 100px;
-    padding-top: 5px;
-    margin-left: 170px;
+    display: flex;
+    flex-direction: row;
+    padding-top: 2px;
+    box-shadow: 5px 15px 25px rgba(0,0,0,0.35);
+    border-radius: 3px;
+    margin-top: 50px;
+}
+.send{
+    font-size: 12px;
+    padding-left: 1px;
+    color: white;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border:none;
+    background: none;
+}
+.icon{
+    padding-top: 2px;
+    text-align: center;
+    align-items: center;
+    font-size: 15px;
+    padding-left: 1px;
+}
+.header{
+    align-items: center;
+    justify-content: center;
+    color:rgb(4, 4, 78);
+    margin-top: 0;
+    height: 35px;
+    border: 2px solid white;
+    background-color: white;
+}
+.h2{
+    font-family: "Roboto Condensed", sans-serif;
+    margin-top: 0;
+    margin-left: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor:default;
+}
+.uploadbtn{
+    
+    color: white;
+    display: inline-block;
+    background:rgb(50, 170, 245);
+    height: 25px;
+    cursor: pointer;
+    justify-content: center;
+    width: 90px;
+    border: none;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: row;
+    padding-top: 2px;
+    box-shadow: 5px 15px 25px rgba(0,0,0,0.35);
+    border-radius: 3px;
+}
+.upload{
+    padding-top: 3px;
+    text-align: center;
+    align-items: center;
+    font-size: 12px;
+    padding-left: 1px;
+    color: white;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border:none;
+    background: none;
+}
+.uploadicon{
+    padding-top: 2px;
+    text-align: center;
+    align-items: center;
+    font-size: 15px;
+    padding-left: 4px;
+}
+.upcontainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
