@@ -94,6 +94,7 @@ h1,.validemails,.invalidemails{
     width:100%;
 }
 .forms{
+    font-size: medium;
     text-transform: uppercase;
     font-family: "Noto Serif", serif;;
     gap: 10px;
