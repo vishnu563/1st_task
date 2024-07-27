@@ -207,6 +207,7 @@ body{
     align-items: center;
 }
 text{
+    color: aliceblue;
     font-family: 'Times New Roman', Times, serif;
 }
 .centercontainer{

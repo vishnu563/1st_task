@@ -18,7 +18,7 @@ function HomePage() {
                     <div className='validemails'>
                         <p className='vm'>Valid Email(s)</p>
                         <div className='validscroll'>
-                        <text>color	string</text><br/>
+                        <text>vishnuprasanth@gmail.com</text><br/>
                         </div>
                     </div>
                         <div className='sendcontainer'>
@@ -37,7 +37,7 @@ function HomePage() {
                 <p className='vm'>Invalid Mail(s)</p>
             </div>
             <div className='invalidmail'>
-
+                <text>vishnu@.cmmm</text>
             </div>
         </div>
         <div className='rightside_container'>
