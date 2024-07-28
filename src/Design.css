@@ -6,17 +6,16 @@ body{
     background-position: center;
 }
 .container{
+    justify-content: space-around;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
 }
 .leftside_container{
-    top:0;
-    margin-top: 80px;
-    left:0;
+    margin-right: 30px;
     margin-left: 30px;
-    position: fixed;
+    margin-top: 60px;
+    flex-grow: 1;
+    flex-basis: 200;
     border: 2px solid rgba(201, 179, 194, 0.721);
     border-radius: 10px;
     display: flex;
@@ -47,11 +46,13 @@ body{
     text-align: center;
 }
 .validscroll{
+    padding-top: 5px;
+    padding-left: 10px;
     text-align: justify;
     overflow: auto;
     min-height: 230px;
     max-height: 240px;
-    max-width: 360px;
+    max-width: 350px;
     margin-left: 2px;
     margin-right: 2px;
     border :2px solid rgba(201, 179, 194, 0.721);
@@ -69,26 +70,24 @@ body{
     border-radius: 4px;
 }
 .rightside_container{
+    margin-top: 80px;
+    margin-bottom: 10px;
+    flex-grow: 1;
+    flex-basis: 200;
     font-size: 30px;
-    top: 0;
-    margin-top: 100px;
-    right: 0;
-    margin-right: 20px;
-    position:fixed;
     justify-content: center;
     color: white;
     display: flex;
     flex-direction: column;
     border: 2px solid rgba(201, 179, 194, 0.721);
     border-radius: 10px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    padding-left: 8px;
-    padding-right: 8px;
-    max-width: 420px;
+    max-width: 450px;
     width:100%;
+    min-height: 400px;
+    height: 100%;
 }
 .forms{
+    padding: 0px 8px;
     font-size: medium;
     text-transform: uppercase;
     font-family: "Noto Serif", serif;;
@@ -205,12 +204,15 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 20px;
 }
 text{
     color: aliceblue;
     font-family: 'Times New Roman', Times, serif;
 }
 .centercontainer{
+    flex-grow: 1;
+    flex-basis: 200;
     border: 2px solid gray;
     margin-top: 10%;
     max-width: 200px;
@@ -221,11 +223,15 @@ text{
     border-radius: 5px;
 }
 .invalidmail{
+    padding-top: 5px;
+    padding-left: 10px;
+    overflow: auto;
     border: 2px solid gray;
     border-radius: 5px;
-    max-width: 180px;
+    max-width: 170px;
     width: 100%;
     margin-left: 8px;
     min-height: 200px;
+    max-height: 200px;
     height: 100%;
 }
