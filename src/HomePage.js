@@ -38,34 +38,6 @@ function HomePage() {
             </div>
             <div className='invalidmail'>
                 <text>vishnu@.cmmm</text><br/>
-                <text>vishnu@.cmmm</text><br/>
-                <text>vishnu@.cmmm</text><br/>
-                <text>vishnu@.cmmm</text><br/>
-                <text>vishnu@.cmmm</text><br/>
-                <text>vishnu@.cmmm</text><br/>
-                <text>vishnu@.cmmm</text><br/>
-                <text>vishnu@.cmmm</text><br/>
-                <text>vishnu@.cmmm</text><br/>
-                <text>vishnu@.cmmm</text><br/>
-                <text>vishnu@.cmmm</text><br/>
-                <text>vishnu@.cmmm</text><br/>
-                <text>vishnu@.cmmm</text><br/>
-                <text>vishnu@.cmmm</text><br/>
-                <text>vishnu@.cmmm</text><br/>
-                <text>vishnu@.cmmm</text><br/>
-                <text>vishnu@.cmmm</text><br/>
-                <text>vishnu@.cmmm</text><br/>
-                <text>vishnu@.cmmm</text><br/>
-                <text>vishnu@.cmmm</text><br/>
-                <text>vishnu@.cmmm</text><br/>
-                <text>vishnu@.cmmm</text><br/>
-                <text>vishnu@.cmmm</text><br/>
-                <text>vishnu@.cmmm</text><br/>
-                <text>vishnu@.cmmm</text><br/>
-                <text>vishnu@.cmmm</text><br/>
-                <text>vishnu@.cmmm</text><br/>
-                <text>vishnu@.cmmm</text><br/>
-                <text>vishnu@.cmmm</text><br/>
             </div>
         </div>
         <div className='rightside_container'>

@@ -5,147 +5,6 @@ body{
     background-attachment: fixed;
     background-position: center;
 }
-.container{
-    justify-content: space-around;
-    display: flex;
-    flex-wrap: wrap;
-}
-.leftside_container{
-    margin-right: 30px;
-    margin-left: 30px;
-    margin-top: 60px;
-    flex-grow: 1;
-    flex-basis: 200;
-    border: 2px solid rgba(201, 179, 194, 0.721);
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    backdrop-filter: blur(3px);
-    max-width: 450px;
-    width: 100%;
-    padding-bottom: 10px;
-    height: 430px; 
-}
-.email{
-    border: 2px solid black;
-    display: flex;
-    flex-direction: row;
-}
-.validemails{
-    margin-top: 10px;
-    margin-left: 40px;
-    margin-right: 40px;
-    padding-bottom: 30px;
-    color: aliceblue;
-}
-
-.vm{
-    color:aliceblue;
-    font-family: "Josefin Sans", sans-serif;
-    text-transform: uppercase;
-    text-align: center;
-}
-.validscroll{
-    padding-top: 5px;
-    padding-left: 10px;
-    text-align: justify;
-    overflow: auto;
-    min-height: 230px;
-    max-height: 240px;
-    max-width: 350px;
-    margin-left: 2px;
-    margin-right: 2px;
-    border :2px solid rgba(201, 179, 194, 0.721);
-    border-radius: 5px;
-}
-::-webkit-scrollbar{
-    width: 16px;
-}
-::-webkit-scrollbar-track{
-    background:transparent;
-}
-::-webkit-scrollbar-thumb{
-    background-color: rgba(222, 235, 234, 0.824);
-    border: 1px solid white;
-    border-radius: 4px;
-}
-.rightside_container{
-    margin-top: 80px;
-    margin-bottom: 10px;
-    flex-grow: 1;
-    flex-basis: 200;
-    font-size: 30px;
-    justify-content: center;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    border: 2px solid rgba(201, 179, 194, 0.721);
-    border-radius: 10px;
-    max-width: 450px;
-    width:100%;
-    min-height: 400px;
-    height: 100%;
-}
-.forms{
-    padding: 0px 8px;
-    font-size: medium;
-    text-transform: uppercase;
-    font-family: "Noto Serif", serif;;
-    gap: 10px;
-    display: flex;
-    flex-direction: column;
-}
-.inputs{
-    padding: 4px 8px;
-    border: 2px solid gray;
-    border-radius: 10px ;
-    width: 400px;
-}
-.inputs:hover{
-    border: 2px solid yellow;
-}
-.files{
-    display: none;
- } 
- .sendcontainer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
- }
-.sendbtn{
-    color: white;
-    display: inline-block;
-    background:rgb(50, 170, 245);
-    height: 25px;
-    cursor: pointer;
-    justify-content: center;
-    width: 90px;
-    border: none;
-    border-radius: 3px;
-    display: flex;
-    flex-direction: row;
-    padding-top: 2px;
-    box-shadow: 5px 15px 25px rgba(0,0,0,0.35);
-    border-radius: 3px;
-    margin-top: 50px;
-}
-.send{
-    font-size: 12px;
-    padding-left: 1px;
-    color: white;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    cursor: pointer;
-    border:none;
-    background: none;
-}
-.icon{
-    padding-top: 2px;
-    text-align: center;
-    align-items: center;
-    font-size: 15px;
-    padding-left: 1px;
-}
 .header{
     align-items: center;
     justify-content: center;
@@ -163,6 +22,170 @@ body{
     flex-direction: column;
     justify-content: center;
     cursor:default;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.leftside_container{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-basis: 200;
+    border: 2px solid rgba(201, 179, 194, 0.721);
+    border-radius: 10px;
+    backdrop-filter: blur(3px);
+    max-width: 450px;
+    width: 100%;
+    height: 430px; 
+    padding-bottom: 10px;
+    margin-right: 30px;
+    margin-left: 30px;
+    margin-top: 60px;
+}
+.validemails{
+    margin-top: 10px;
+    margin-left: 40px;
+    margin-right: 40px;
+    padding-bottom: 30px;
+}
+.vm{
+    color:aliceblue;
+    font-family: "Josefin Sans", sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+}
+.validscroll{
+    border :2px solid rgba(201, 179, 194, 0.721);
+    border-radius: 5px;
+    text-align: justify;
+    overflow: auto;
+    min-height: 230px;
+    max-height: 240px;
+    max-width: 350px;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-top: 5px;
+    padding-left: 10px;
+}
+::-webkit-scrollbar{
+    width: 16px;
+}
+::-webkit-scrollbar-track{
+    background:transparent;
+}
+::-webkit-scrollbar-thumb{
+    background-color: rgba(222, 235, 234, 0.824);
+    border: 1px solid white;
+    border-radius: 4px;
+}
+.sendcontainer{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+.sendbtn{
+    display: flex;
+    flex-direction: row;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    background:rgb(50, 170, 245);
+    cursor: pointer;
+    justify-content: center;
+    height: 25px;
+    width: 90px;
+    box-shadow: 5px 15px 25px rgba(0,0,0,0.35);
+    border-radius: 3px;
+    margin-top: 50px;
+    padding-top: 2px;
+}
+.send{
+   font-size: 12px;
+   color: white;
+   letter-spacing: 1.5px;
+   text-transform: uppercase;
+   cursor: pointer;
+   border:none;
+   background: none;
+   padding-left: 1px;
+}
+.icon{
+   padding-top: 2px;
+   text-align: center;
+   align-items: center;
+   font-size: 15px;
+   padding-left: 1px;
+}
+.centercontainer{
+    flex-grow: 1;
+    flex-basis: 200;
+    border: 2px solid gray;
+    margin-top: 10%;
+    max-width: 200px;
+    width: 100%;
+    min-height: 300px;
+    max-height: 300px;
+    height: 100%;
+    border-radius: 5px;
+}
+.invalidmail{
+    overflow: auto;
+    border: 2px solid gray;
+    border-radius: 5px;
+    max-width: 170px;
+    width: 100%;
+    margin-left: 8px;
+    min-height: 200px;
+    max-height: 200px;
+    height: 100%;
+    padding-top: 5px;
+    padding-left: 10px;
+}
+.rightside_container{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid rgba(201, 179, 194, 0.721);
+    border-radius: 10px;
+    flex-grow: 1;
+    flex-basis: 200;
+    justify-content: center;
+    color: white;
+    font-size: 30px;
+    max-width: 450px;
+    width:100%;
+    min-height: 400px;
+    height: 100%;
+    margin-top: 80px;
+    margin-bottom: 10px;
+}
+.forms{
+    display: flex;
+    flex-direction: column;
+    font-size: medium;
+    text-transform: uppercase;
+    font-family: "Noto Serif", serif;;
+    gap: 10px;
+    padding: 0px 8px;
+}
+.inputs{
+    border: 2px solid gray;
+    border-radius: 10px ;
+    width: 400px;
+    padding: 4px 8px;
+}
+.inputs:hover{
+    border: 2px solid yellow;
+}
+.files{
+    display: none;
+} 
+.upcontainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
 }
 .uploadbtn{
     color: white;
@@ -200,38 +223,7 @@ body{
     font-size: 15px;
     padding-left: 4px;
 }
-.upcontainer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 20px;
-}
 text{
     color: aliceblue;
     font-family: 'Times New Roman', Times, serif;
-}
-.centercontainer{
-    flex-grow: 1;
-    flex-basis: 200;
-    border: 2px solid gray;
-    margin-top: 10%;
-    max-width: 200px;
-    width: 100%;
-    min-height: 300px;
-    max-height: 300px;
-    height: 100%;
-    border-radius: 5px;
-}
-.invalidmail{
-    padding-top: 5px;
-    padding-left: 10px;
-    overflow: auto;
-    border: 2px solid gray;
-    border-radius: 5px;
-    max-width: 170px;
-    width: 100%;
-    margin-left: 8px;
-    min-height: 200px;
-    max-height: 200px;
-    height: 100%;
 }
