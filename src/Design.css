@@ -61,6 +61,7 @@ body{
     border-radius: 5px;
     text-align: justify;
     overflow: auto;
+    
     min-height: 230px;
     max-height: 240px;
     max-width: 350px;
@@ -80,43 +81,57 @@ body{
     border: 1px solid white;
     border-radius: 4px;
 }
-.sendcontainer{
-   display: flex;
-   flex-direction: column;
-   align-items: center;
+.files{
+    display:none;
 }
-.sendbtn{
+.uploadlabel{
+    padding-left: 8px;
+    color: aliceblue;
+    text-transform: uppercase;
+    width: 150px;
+    margin-left: 150px;
+}
+.upcontainer{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+.uploadbtn{
     color: white;
-    border: none;
-    border-radius: 3px;
+    display: inline-block;
     background:rgb(50, 170, 245);
+    height: 25px;
     cursor: pointer;
     justify-content: center;
-    height: 25px;
     width: 90px;
+    border: none;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: row;
+    padding-top: 2px;
     box-shadow: 5px 15px 25px rgba(0,0,0,0.35);
     border-radius: 3px;
-    margin-top: 50px;
+}
+.upload{
+    padding-top: 3px;
+    text-align: center;
+    align-items: center;
+    font-size: 12px;
+    padding-left: 1px;
+    color: white;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border:none;
+    background: none;
+}
+.uploadicon{
     padding-top: 2px;
-}
-.send{
-   font-size: 12px;
-   color: white;
-   letter-spacing: 1.5px;
-   text-transform: uppercase;
-   cursor: pointer;
-   border:none;
-   background: none;
-   padding-left: 1px;
-}
-.icon{
-   padding-top: 2px;
-   text-align: center;
-   align-items: center;
-   font-size: 15px;
-   padding-left: 1px;
+    text-align: center;
+    align-items: center;
+    font-size: 15px;
+    padding-left: 4px;
 }
 .centercontainer{
     flex-grow: 1;
@@ -178,51 +193,44 @@ body{
 .inputs:hover{
     border: 2px solid yellow;
 }
-.files{
-    display: none;
-} 
-.upcontainer{
+.sendcontainer{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 20px;
-}
-.uploadbtn{
-    color: white;
-    display: inline-block;
-    background:rgb(50, 170, 245);
-    height: 25px;
-    cursor: pointer;
-    justify-content: center;
-    width: 90px;
-    border: none;
-    border-radius: 3px;
-    display: flex;
-    flex-direction: row;
-    padding-top: 2px;
-    box-shadow: 5px 15px 25px rgba(0,0,0,0.35);
-    border-radius: 3px;
-}
-.upload{
-    padding-top: 3px;
-    text-align: center;
-    align-items: center;
+ }
+ .sendbtn{
+     display: flex;
+     flex-direction: row;
+     color: white;
+     border: none;
+     border-radius: 3px;
+     background:rgb(50, 170, 245);
+     cursor: pointer;
+     justify-content: center;
+     height: 25px;
+     width: 90px;
+     box-shadow: 5px 15px 25px rgba(0,0,0,0.35);
+     border-radius: 3px;
+     margin-top: 50px;
+     padding-top: 2px;
+ }
+ .send{
     font-size: 12px;
-    padding-left: 1px;
     color: white;
     letter-spacing: 1.5px;
     text-transform: uppercase;
     cursor: pointer;
     border:none;
     background: none;
-}
-.uploadicon{
+    padding-left: 1px;
+ }
+ .icon{
     padding-top: 2px;
     text-align: center;
     align-items: center;
     font-size: 15px;
-    padding-left: 4px;
-}
+    padding-left: 1px;
+ }
 text{
     color: aliceblue;
     font-family: 'Times New Roman', Times, serif;
