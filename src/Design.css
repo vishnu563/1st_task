@@ -1,5 +1,5 @@
 body{
-    background-image: url(./siva.jpg);
+    background-image: url(./bg.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -231,7 +231,7 @@ body{
     font-size: 15px;
     padding-left: 1px;
  }
-text{
+.validMailText,.inValidMailText{
     color: aliceblue;
     font-family: 'Times New Roman', Times, serif;
 }

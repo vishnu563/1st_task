@@ -10,14 +10,39 @@ library.add(faEnvelope,faArrowUpFromBracket);
 
 function HomePage() {
     
-    const[data,setData]=useState([]);
+    const [validEmails, setValidEmails] = useState([]);
+    const [invalidEmails, setInvalidEmails] = useState([]);
+    const [validCount, setValidCount] = useState(0);
+    const [invalidCount, setInvalidCount] = useState(0);
+
+    const isValidEmail = (email) => {
+        let validEmailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return validEmailPattern.test(email);
+    }
 
     const handleFileUpload = (e) => {
+
         const file = e.target.files[0];
+
         Papa.parse(file,{
             header: true,
             complete: (results) =>{
-                setData(results.data);
+                const valid = [];
+                const invalid = [];
+
+                results.data.forEach((row) => {
+                    if (isValidEmail(row.Email)) {
+                        valid.push(row.Email);
+                    } else {
+                        invalid.push(row.Email);
+                    }
+                });
+
+                setValidEmails(valid);
+                setInvalidEmails(invalid);
+                setValidCount(valid.length);
+                setInvalidCount(invalid.length);
+
             },
         });
     }
@@ -30,43 +55,54 @@ function HomePage() {
     <div className='container'>
         <div className='leftside_container'>
             <div className='validemails'>
-                <p className='vm'>Valid Email(s)</p>
-                    <div className='validscroll'>
-                        <text>
-                            {data.length ? (
+                <p className='vm'>Valid Email(s) ({validCount})</p>
+                <div className='validscroll'>
+                    <div className='validMailText'>
+                        {validEmails.length > 0 && (
                             <table>
                                 <tbody>
-                                    {data.map((item, index) => (
-                                    <tr key={index}>
-                                        <td>{item.Email}</td>
-                                    </tr>
-                                    ))}
+                                    {validEmails.map((item, index) => (
+                                        <tr key={index}>
+                                            <td>{item}</td>
+                                        </tr>
+                                        ))}
                                 </tbody>
                             </table>
-                            ) : null}
-                        </text>
+                        )}
                     </div>
                 </div>
-                <label className='uploadlabel' >Upload .csv File</label>
-                    <input className='files' type="file" accept=".csv" onChange={handleFileUpload} id='btn'></input>
-                        <div className='upcontainer'>
-                            <div className='uploadbtn'>
-                                <label htmlFor="btn" className='upload'>
-                                    upload
-                                </label>
-                                <div className='uploadicon'>
-                                    <FontAwesomeIcon icon={faArrowUpFromBracket} />
-                                </div>
-                            </div>
-                        </div>
-                        
+            </div>
+            <label className='uploadlabel' >Upload .csv File</label>
+            <input className='files' type="file" accept=".csv" onChange={handleFileUpload} id='btn'></input>
+            <div className='upcontainer'>
+                <div className='uploadbtn'>
+                    <label htmlFor="btn" className='upload'>
+                        upload
+                    </label>
+                    <div className='uploadicon'>
+                        <FontAwesomeIcon icon={faArrowUpFromBracket} />
+                    </div>
+                </div>
+            </div>            
         </div>  
         <div className='centercontainer'>
             <div>
-                <p className='vm'>Invalid Mail(s)</p>
+                <p className='vm'>Invalid Mail(s) ({invalidCount})</p>
             </div>
             <div className='invalidmail'>
-                <text>vishnu@.cmmm</text><br/>
+                <div className='inValidMailText'>
+                    {invalidEmails.length > 0 && (
+                        <table>
+                            <tbody>
+                                {invalidEmails.map((item, index) => (
+                                <tr key={index}>
+                                    <td>{item}</td>
+                                </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    )}
+                </div>
             </div>
         </div>
         <div className='rightside_container'>
@@ -78,14 +114,14 @@ function HomePage() {
                 <label htmlFor="body">content</label>
                     <textarea className='inputs' id="body" name="body" placeholder="Enter body Text"></textarea>
                 <div className='sendcontainer'>
-                            <div className='sendbtn'>
-                                <button className='send'>
-                                    send
-                                </button>
-                            <div className='icon'>
-                            <FontAwesomeIcon icon="fa-regular fa-envelope" />
-                            </div>
-                            </div>
+                    <div className='sendbtn'>
+                        <button className='send'>
+                            send
+                        </button>
+                        <div className='icon'>
+                        <FontAwesomeIcon icon="fa-regular fa-envelope" />
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
