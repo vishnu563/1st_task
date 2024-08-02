@@ -10,26 +10,30 @@ library.add(faEnvelope,faArrowUpFromBracket);
 
 function HomePage() {
     
+    const [email,setEmail] = useState("");
+    const [subject,setSubject] = useState("");
+    const [content,setContent] = useState("");
+    
+
     const [validEmails, setValidEmails] = useState([]);
     const [invalidEmails, setInvalidEmails] = useState([]);
     const [validCount, setValidCount] = useState(0);
     const [invalidCount, setInvalidCount] = useState(0);
 
     const isValidEmail = (email) => {
-        let validEmailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        let validEmailPattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,3}$/;
         return validEmailPattern.test(email);
     }
 
     const handleFileUpload = (e) => {
 
         const file = e.target.files[0];
-
+        if(file && file.type.startsWith("text/csv")){
         Papa.parse(file,{
             header: true,
             complete: (results) =>{
                 const valid = [];
                 const invalid = [];
-
                 results.data.forEach((row) => {
                     if (isValidEmail(row.Email)) {
                         valid.push(row.Email);
@@ -41,14 +45,36 @@ function HomePage() {
                 setValidEmails(valid);
                 setInvalidEmails(invalid);
                 setValidCount(valid.length);
-                setInvalidCount(invalid.length);
-
+                setInvalidCount(invalid.length-1);
             },
         });
     }
+    else{
+        alert("Please select a CSV file");
+    }
+    }
 
-  return (
-  <>
+
+    const handleEmail = (e) => {
+        setEmail(e.target.value);
+    }
+
+    const handleSubject = (e) => {
+        setSubject(e.target.value);
+    }
+
+    const handleContent =(e)=>{
+        setContent(e.target.value);
+    }
+
+    function sendEmail(){
+        
+        setEmail("");
+        setSubject("");
+        setContent("");
+    }
+
+    return (<>
     <div className='header'>
         <h2 className='h2'>Mass Mail Dispatcher</h2>
     </div>
@@ -58,7 +84,7 @@ function HomePage() {
                 <p className='vm'>Valid Email(s) ({validCount})</p>
                 <div className='validscroll'>
                     <div className='validMailText'>
-                        {validEmails.length > 0 && (
+                        {validEmails.length ? (
                             <table>
                                 <tbody>
                                     {validEmails.map((item, index) => (
@@ -68,12 +94,12 @@ function HomePage() {
                                         ))}
                                 </tbody>
                             </table>
-                        )}
+                        ) : null}
                     </div>
                 </div>
             </div>
             <label className='uploadlabel' >Upload .csv File</label>
-            <input className='files' type="file" accept=".csv" onChange={handleFileUpload} id='btn'></input>
+            <input className='files' type="file" onChange={handleFileUpload} id='btn'></input>
             <div className='upcontainer'>
                 <div className='uploadbtn'>
                     <label htmlFor="btn" className='upload'>
@@ -91,7 +117,7 @@ function HomePage() {
             </div>
             <div className='invalidmail'>
                 <div className='inValidMailText'>
-                    {invalidEmails.length > 0 && (
+                    {invalidEmails.length ? (
                         <table>
                             <tbody>
                                 {invalidEmails.map((item, index) => (
@@ -101,21 +127,21 @@ function HomePage() {
                                 ))}
                             </tbody>
                         </table>
-                    )}
+                    ):null}
                 </div>
             </div>
         </div>
         <div className='rightside_container'>
             <div className='forms'>
                 <label htmlFor="email">sender mail-id</label>
-                    <input className='inputs' type="email" id="email" name="email" placeholder="Enter email"></input>
+                    <input className='inputs' type="email" id="email" name="email" placeholder="Enter email" onChange={handleEmail} required></input>
                 <label htmlFor="subject">Subject</label>
-                    <input className='inputs' type="text" id="subject" name="subject" placeholder="Enter subject"></input>
+                    <input className='inputs' type="text" id="subject" name="subject" placeholder="Enter subject" onChange={handleSubject} required></input>
                 <label htmlFor="body">content</label>
-                    <textarea className='inputs' id="body" name="body" placeholder="Enter body Text"></textarea>
+                    <textarea className='inputs' id="body" name="body" placeholder="Enter Content" onChange={handleContent} required></textarea>
                 <div className='sendcontainer'>
                     <div className='sendbtn'>
-                        <button className='send'>
+                        <button className='send' onClick={sendEmail}>
                             send
                         </button>
                         <div className='icon'>
@@ -126,8 +152,7 @@ function HomePage() {
             </div>
         </div>
     </div>
-  </>
-  )
+    </>)
 }
 
 export default HomePage;
