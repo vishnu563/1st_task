@@ -8,7 +8,6 @@ import { faArrowUpFromBracket } from '@fortawesome/free-solid-svg-icons';
 library.add(faEnvelope,faArrowUpFromBracket);
 
 
-
 function HomePage() {
     
     const [email,setEmail] = useState("");
