@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import Papa from 'papaparse';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -13,13 +14,17 @@ function HomePage() {
     const [email,setEmail] = useState("");
     const [subject,setSubject] = useState("");
     const [content,setContent] = useState("");
-    
+    const [error, setError] = useState(null);
 
     const [validEmails, setValidEmails] = useState([]);
     const [invalidEmails, setInvalidEmails] = useState([]);
     const [validCount, setValidCount] = useState(0);
     const [invalidCount, setInvalidCount] = useState(0);
 
+    useEffect(()=>{
+       
+    },[])
+        
     const isValidEmail = (email) => {
         let validEmailPattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,3}$/;
         return validEmailPattern.test(email);
@@ -67,13 +72,27 @@ function HomePage() {
         setContent(e.target.value);
     }
 
-    function sendEmail(){
-        
-        setEmail("");
-        setSubject("");
-        setContent("");
-    }
-
+    const sendEmail = () => {
+        if (!email || !subject || !content) {
+          setError("Please fill in all fields");
+          return;
+        }
+    
+        axios.post("http://localhost:5000/send-email", {
+          validEmails,
+          subject,
+          content,
+        })
+          .then(() => {
+            console.log("success");
+          })
+          .catch((error) => {
+            console.log("failure", error);
+            setError("Error sending email");
+          });
+      };
+    
+    
     return (<>
     <div className='header'>
         <h2 className='h2'>Mass Mail Dispatcher</h2>
@@ -148,6 +167,7 @@ function HomePage() {
                         <FontAwesomeIcon icon="fa-regular fa-envelope" />
                         </div>
                     </div>
+                    {error && <p style={{ color: "green" }}>{error}</p>}
                 </div>
             </div>
         </div>
