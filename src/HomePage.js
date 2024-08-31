@@ -83,11 +83,12 @@ function HomePage() {
           content,
         })
           .then(() => {
+            alert(`Sucessfully sent ${validCount} Emails`)
             console.log("success");
           })
           .catch((error) => {
-            console.log("failure", error);
             setError("Error sending email");
+            alert("Failure to Send Mails")
           });
       };
     
